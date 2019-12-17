@@ -9,7 +9,7 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc5409.TonkaDriveCode2;
+package org.usfirst.frc5409.DriveCodeForTonka;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -17,8 +17,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc5409.TonkaDriveCode2.commands.*;
-import org.usfirst.frc5409.TonkaDriveCode2.subsystems.*;
+import org.usfirst.frc5409.DriveCodeForTonka.commands.*;
+import org.usfirst.frc5409.DriveCodeForTonka.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the

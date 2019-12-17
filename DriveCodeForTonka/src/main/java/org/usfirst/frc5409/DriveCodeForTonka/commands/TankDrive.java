@@ -9,9 +9,9 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc5409.TonkaDriveCode2.commands;
+package org.usfirst.frc5409.DriveCodeForTonka.commands;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc5409.TonkaDriveCode2.Robot;
+import org.usfirst.frc5409.DriveCodeForTonka.Robot;
 
 /**
  *
@@ -43,7 +43,17 @@ public class TankDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+     double JoystickY = Robot.oi.getDriverRawAxis(2);
+     double JoystickX = Robot.oi.getDriverRawAxis(1);
+      //getting joystick values for the x and y axis of the driverstick? (is that what it's called?)
+     boolean TurnOnSpot = Robot.oi.joystickButton1.get();
+     //getting turn function. 
+
+     Robot.driveTrain.curvatureDrive(JoystickY, JoystickX, TurnOnSpot);
     }
+
+
+    
 
     // Make this return true when this Command no longer needs to run execute()
     @Override

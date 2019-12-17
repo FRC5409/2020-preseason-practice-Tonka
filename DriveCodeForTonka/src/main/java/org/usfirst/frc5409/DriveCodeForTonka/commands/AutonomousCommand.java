@@ -9,9 +9,9 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc5409.TonkaDriveCode2.commands;
+package org.usfirst.frc5409.DriveCodeForTonka.commands;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc5409.TonkaDriveCode2.Robot;
+import org.usfirst.frc5409.DriveCodeForTonka.Robot;
 
 /**
  *
