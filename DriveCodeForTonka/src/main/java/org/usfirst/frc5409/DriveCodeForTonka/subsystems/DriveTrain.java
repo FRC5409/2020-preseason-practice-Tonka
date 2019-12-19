@@ -129,7 +129,6 @@ public class DriveTrain extends Subsystem {
             m_RightDriveFront_TalonSRX_C3.set(ControlMode.PercentOutput, zRotation);
 
             xSpeed = 0; 
-        } else if (quickTurn = false) {
             //if quickTurn is true do this, if false do nothing 
             
         }
