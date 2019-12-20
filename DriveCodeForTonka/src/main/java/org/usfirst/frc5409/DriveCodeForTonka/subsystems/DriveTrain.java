@@ -61,6 +61,9 @@ public class DriveTrain extends Subsystem {
         
         //Set SlaveSpeedControllers to Follow MasterSpeedController
         m_LeftDriveRear_TalonSRX_C2.follow(m_LeftDriveFront_TalonSRX_C1);
+
+       
+        leftMotorSpeedControllerGroup = new SpeedControllerGroup(m_LeftDriveFront_TalonSRX_C1, m_LeftDriveRear_TalonSRX_C2);
                 
                 
         
@@ -70,6 +73,7 @@ public class DriveTrain extends Subsystem {
         
         m_RightDriveRear_TalonSRX_C4 = new WPI_TalonSRX(4);
         
+        rightMotorSpeedControllerGroup = new SpeedControllerGroup(m_RightDriveFront_TalonSRX_C3, m_RightDriveRear_TalonSRX_C4);
         
         
         
@@ -116,17 +120,17 @@ public class DriveTrain extends Subsystem {
     // here. Call these from Commands.
 
     public void curvatureDrive(double xSpeed, double zRotation, boolean quickTurn){
-        m_LeftDriveFront_TalonSRX_C1.set(ControlMode.PercentOutput, -xSpeed);
-        m_RightDriveFront_TalonSRX_C3.set(ControlMode.PercentOutput, xSpeed);
+        leftMotorSpeedControllerGroup.set(-xSpeed);
+        rightMotorSpeedControllerGroup.set(xSpeed);
         //setting forward and backwards
 
-        m_LeftDriveFront_TalonSRX_C1.set(ControlMode.PercentOutput, zRotation);
-        m_RightDriveFront_TalonSRX_C3.set(ControlMode.PercentOutput, zRotation);
+        leftMotorSpeedControllerGroup.set(zRotation);
+        rightMotorSpeedControllerGroup.set(zRotation);
         //setting turning 
 
         if (quickTurn = true){
-            m_LeftDriveFront_TalonSRX_C1.set(ControlMode.PercentOutput, zRotation);
-            m_RightDriveFront_TalonSRX_C3.set(ControlMode.PercentOutput, zRotation);
+         leftMotorSpeedControllerGroup.set(zRotation);
+         rightMotorSpeedControllerGroup.set(zRotation);
 
             xSpeed = 0; 
             //if quickTurn is true do this, if false do nothing 
