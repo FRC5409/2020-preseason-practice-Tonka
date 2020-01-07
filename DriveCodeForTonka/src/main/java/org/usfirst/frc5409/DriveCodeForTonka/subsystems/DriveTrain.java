@@ -133,12 +133,12 @@ public class DriveTrain extends Subsystem {
          rightMotorSpeedControllerGroup.set(zRotation);
 
             xSpeed = 0; 
-            //if quickTurn is true do this, if false do nothing 
-            
+            //if quickTurn is true, set the motors to only zrotation (this way it will turn on spot)
+            //set xSpeed to false so it won't drift 
+
         }
 
     }
-
 
 }
 
