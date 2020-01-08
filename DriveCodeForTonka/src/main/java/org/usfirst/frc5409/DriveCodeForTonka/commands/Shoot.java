@@ -6,13 +6,15 @@
 /*----------------------------------------------------------------------------*/
 
 package org.usfirst.frc5409.DriveCodeForTonka.commands;
-
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc5409.DriveCodeForTonka.Robot;
 
 public class Shoot extends Command {
   public Shoot() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+     requires(Robot.shooting);
+
+
   }
 
   // Called just before this Command runs the first time
@@ -23,6 +25,14 @@ public class Shoot extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+  double joystickX = Robot.oi.getDriverRawAxis(4); 
+  boolean rotating = Robot.oi.joystickButton2.get(); 
+
+  double rotate = rotating ? 1:0; 
+
+  Robot.shooting.Rotation(rotate); 
+  Robot.shooting.Shooting(joystickX);
+
   }
 
   // Make this return true when this Command no longer needs to run execute()

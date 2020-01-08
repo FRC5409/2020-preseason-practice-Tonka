@@ -13,6 +13,7 @@ package org.usfirst.frc5409.DriveCodeForTonka.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5409.DriveCodeForTonka.Robot;
 
+
 /**
  *
  */
@@ -50,6 +51,7 @@ public class TankDrive extends Command {
      //getting turn function. 
 
      Robot.driveTrain.curvatureDrive(JoystickY, JoystickX, TurnOnSpot);
+     //putting in values
     }
 
 
